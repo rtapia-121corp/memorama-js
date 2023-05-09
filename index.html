@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/game.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+
+    <title>Memorama</title>
+  </head>
+  <body>
+    <div class="header hidden" id="header">
+      <div><span id="countAttempt"> </span></div>
+      <div><span id="hits"> </span></div>
+    </div>
+    <div id="board"></div>
+    <!-- <div class="new-game" onclick="start()" id="btnStart"> Nuevo Juego </div>  -->
+
+    <!-- Modal Game Over -->
+    <div id="gameOver" class="modal">
+      <div class="modal-content" id="div-contect">
+        <div class="modal-body">
+          <span id="score"></span>
+          <div id="divCoin"></div>
+          <div>
+            <button type="button" class="btn-primary" onclick="tryAgain()"id="tryagain" >
+              Try again
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+      integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/game.js"></script>
+    <script>
+        // {{-- IniciaJuego --}}
+        loadBoard();
+    </script>
+    
+  </body>
+</html>

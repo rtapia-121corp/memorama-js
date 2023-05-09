@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+
+* {
+  transition: all 0.3s;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  --webkit-perspective: 1000;
+  background: #dadada;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: calibri;
+  color: white;
+}
+
+div {
+  display: inline-block;
+}
+div.modal-body div {
+  display: block;
+}
+div.card-area {
+  margin: 2px;
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  /* padding: 10px; */
+  color: #8c8c8c;
+}
+
+.header div {
+  padding: 5px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: start 3s;
+}
+
+.face {
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 1.5px #a5d036;
+  font-size: 300%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-area,
+.card,
+.face {
+  cursor: pointer;
+  min-width: 80px;
+  width: calc(40vw / 3);
+  height: calc(37vh / 2);
+}
+
+
+.back-face-card {
+  background-color: white;
+  transform: rotateY(180deg);
+  border: solid 1px #c1c1c1;
+}
+
+.front-face-card {
+  /* background: linear-gradient(#39b3f9, #2595db); */
+  background: #f0f0f0;
+  z-index: 1;
+}
+
+.front-face-card, .back-face-card{
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+         transition: 0.6s;
+ -webkit-transform-style: preserve-3d;
+         transform-style: preserve-3d;
+ position: absolute;
+}
+
+.img-coin {
+  width: 50%;
+  max-width: 260px;
+}
+
+.img-card {
+  width: 60%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.new-game {
+  background: linear-gradient(#39b3f9, #2595db);
+  padding: 20px;
+  border-radius: 20px;
+  border: #ffffff solid 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  font-size: 20px;
+  border: 3px solid #243355;
+  color: #243355;
+  background: #dcac1a;
+  background: linear-gradient(180deg, #dcac1a 0%, #dcac1a 51%, #db950c 100%);
+  border-radius: 15px;
+  padding: 0.25em 1em;
+  font-family: "Bungee", sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+  background: #dcac1a; 
+  margin-top: 10px;
+  background: linear-gradient(0deg, #dcac1a 0%, #dcac1a 51%, #db950c 100%);
+  transform: scale(1.02);
+}
+
+@keyframes start {
+  20%,
+  90% {
+    transform: rotateY(180deg);
+  }
+  0%,
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+ 
+/* @media (max-width: 480px) {
+  .card-area,
+  .card,
+  .face {
+      width: calc(37vw / 2);
+      height: calc(27vh / 2);
+  }
+  .img-card {
+    width: 60%;
+  }
+} */
+
+
+@media (max-width: 850px) {
+  .card-area,
+  .card,
+  .face {
+    width: calc(70vw / 5);
+    height: calc(50vh / 3);
+  }
+  .img-card {
+    width: 55%;
+  }
+}
+
+@media (max-width: 750px) {
+  .card-area,
+  .card,
+  .face {
+    width: calc(50vw / 5);
+    height: calc(50vh / 3);
+  }
+}
+@media (max-width: 650px) {
+  .card-area,
+  .card,
+  .face {
+    width: calc(50vw / 5);
+    height: calc(50vh / 3);
+  }
+  div.card-area {
+    margin: 0;
+  }
+}
+
+@media (max-width: 475px) {
+  .card-area,
+  .card,
+  .face {
+    width: calc(38vw / 2);
+    height: calc(38vh / 3)
+  }
+} 
